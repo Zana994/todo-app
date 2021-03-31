@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/main.css">
+    <script defer src="js/script.js"></script>
+    <title>To Do App</title>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="top-img"></div>
+        <div class="title">
+            <h1> TO DO </h1>
+            <span class="mode-icon"></span>
+        </div>
+        <div class="container">
+            <div class="newToDo">
+                <span></span>
+                <input id="addnew" type="text" placeholder="Create a new todo...">
+            </div>
+
+            <div class="list-container">
+            <ul class="list" id="list_items">
+                <li class="li_item" draggable="true">
+                    <span class="check completed"></span>
+                    <p class="todo complete"> Complite online JavaScript course </p>
+                    <span class="close"></span>
+                </li>
+                <li class="li_item" draggable="true">
+                    <span class="check"></span>
+                    <p class="todo"> Create playlist </p>
+                    <span class="close"></span>
+                </li>
+                <li class="li_item" draggable="true">
+                    <span class="check"></span>
+                    <p class="todo"> 30 minutes yoga </p>
+                    <span class="close"></span>
+                </li>
+                <li class="li_item" draggable="true">
+                    <span class="check"></span>
+                    <p class="todo"> Buy groceries </p>
+                    <span class="close"></span>
+                </li>
+                <li class="li_item" draggable="true">
+                    <span class="check"></span>
+                    <p class="todo"> Read for 1 hour </p>
+                    <span class="close"></span>
+                </li>
+                <li class="li_item" draggable="true">
+                    <span class="check"></span>
+                    <p class="todo"> Call mom </p>
+                    <span class="close"></span>
+                </li>
+            </ul>
+
+            <div class="options">
+                <span id="count"></span>
+                <div class="sort">
+                    <span class="active" id="all"> All </span>
+                    <span id="active"> Active </span>
+                    <span id="completed"> Completed </span>
+                </div>
+                <span id="clear"> Clear completed </span>
+            </div>
+            </div>
+
+            <p class="drag-drop"> Drag and drop to reorder list </p>
+            <p class="name"> Challenge by Frontend Mentor. Coded by Zana. </p>
+
+        </div>
+    </div>
+</body>
+</html>

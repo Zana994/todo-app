@@ -1,0 +1,560 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+li {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+html {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+/* DARK THEME */
+/* LIGHT THEME */
+@font-face {
+  font-family: Bold;
+  src: url(fonts/Josefin_Sans/static/JosefinSans-Bold.ttf);
+}
+
+@font-face {
+  font-family: Regular;
+  src: url(fonts/Josefin_Sans/static/JosefinSans-Regular.ttf);
+}
+
+@font-face {
+  font-family: Light;
+  src: url(fonts/Josefin_Sans/static/JosefinSans-Light.ttf);
+}
+
+/* GENERAL STYLE */
+html {
+  height: 100%;
+}
+
+body {
+  min-height: 100%;
+  font-size: 18px;
+  background-color: #161722;
+}
+
+body .list-container {
+  background-color: #25273c;
+}
+
+body .todo {
+  color: #cacde8;
+}
+
+body .check:hover::before {
+  background-color: #25273c;
+}
+
+body .newToDo {
+  background-color: #25273c;
+}
+
+body #addnew {
+  background-color: #25273c;
+  color: #cacde8;
+}
+
+body.light {
+  background-color: #fafafa;
+}
+
+body.light .list-container {
+  background-color: #fafafa;
+}
+
+body.light .todo {
+  color: #4d5066;
+}
+
+body.light .check:hover::before {
+  background-color: #fafafa;
+}
+
+body.light .newToDo {
+  background-color: #fafafa;
+  -webkit-box-shadow: 0 5px 5px -5px #c5c8e2;
+          box-shadow: 0 5px 5px -5px #c5c8e2;
+}
+
+body.light .newToDo span {
+  border-color: #cacde8;
+}
+
+body.light #addnew {
+  background-color: #fafafa;
+  color: #484b6a;
+}
+
+body.light li {
+  border-bottom-color: #d3d6ee;
+}
+
+body.light .check {
+  border-color: #cacde8;
+}
+
+body.light .options {
+  color: #9394a5;
+}
+
+body.light #clear:hover {
+  color: #4d5066;
+}
+
+body.light #all:hover, body.light #active:hover, body.light #completed:hover {
+  color: #4d5066;
+}
+
+body.light .list-container {
+  -webkit-box-shadow: -5px 25px 25px -6px #e0e2f1;
+          box-shadow: -5px 25px 25px -6px #e0e2f1;
+}
+
+.wrapper {
+  width: 100%;
+  max-width: 1440px;
+  margin: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.wrapper .top-img {
+  width: 100%;
+  height: 300px;
+  background: url(images/bg-desktop-dark.jpg) center center no-repeat;
+  z-index: -1;
+}
+
+div.top-img.light {
+  background: url(images/bg-desktop-light.jpg) center center no-repeat;
+}
+
+/* TITLE AND MODE */
+.title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 35%;
+  margin-top: -200px;
+}
+
+.title h1 {
+  font-family: Regular;
+  color: #fafafa;
+  letter-spacing: 0.8rem;
+}
+
+.title .mode-icon {
+  display: block;
+  width: 26px;
+  height: 26px;
+  cursor: pointer;
+  background: url(images/icon-sun.svg) center center no-repeat;
+}
+
+.title .mode-icon.light {
+  background: url(images/icon-moon.svg) center center no-repeat;
+}
+
+/* CONTAINER OF ALL TODOS */
+.container {
+  width: 35%;
+  margin-top: 1rem;
+}
+
+.container .newToDo {
+  width: 100%;
+  height: 50px;
+  margin: 2rem 0 1.6rem 0;
+  border-radius: 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-shadow: 0 10px 10px -5px #161722;
+          box-shadow: 0 10px 10px -5px #161722;
+}
+
+.container .newToDo span {
+  display: block;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 1px solid #4d5066;
+  margin: 0 1.5rem;
+}
+
+.container #addnew {
+  display: block;
+  width: 60%;
+  height: 50px;
+  font-family: Regular;
+  font-size: 18px;
+}
+
+.container ::-webkit-input-placeholder {
+  color: #777a92;
+  font-size: 16px;
+}
+
+.container :-ms-input-placeholder {
+  color: #777a92;
+  font-size: 16px;
+}
+
+.container ::-ms-input-placeholder {
+  color: #777a92;
+  font-size: 16px;
+}
+
+.container ::placeholder {
+  color: #777a92;
+  font-size: 16px;
+}
+
+.list-container {
+  width: 100%;
+  border-radius: 5px;
+  -webkit-box-shadow: 0 15px 15px 2px #12141c;
+          box-shadow: 0 15px 15px 2px #12141c;
+}
+
+.list {
+  width: 100%;
+}
+
+.list li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  height: 50px;
+  border-bottom: 1px solid #4d5066;
+  position: relative;
+  cursor: move;
+}
+
+.list li .dragging {
+  opacity: 0.5;
+}
+
+.list li .todo {
+  font-family: Regular;
+  font-size: 15px;
+  letter-spacing: 1px;
+  margin-right: 2rem;
+}
+
+.list li .todo:hover {
+  cursor: pointer;
+}
+
+.list li:hover span.close {
+  display: block;
+}
+
+/* CHECK CIRCLES */
+.check {
+  display: block;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 1px solid #4d5066;
+  margin: 0 1.5rem;
+  position: relative;
+}
+
+.check:hover {
+  cursor: pointer;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#57ddff), to(#c058f3));
+  background-image: linear-gradient(to bottom, #57ddff, #c058f3);
+  background-clip: padding-box;
+  border: none;
+}
+
+.check:hover::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  border-radius: 50%;
+  background-clip: content-box;
+  border: 1px solid transparent;
+}
+
+.check.completed {
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#57ddff), to(#c058f3));
+  background-image: linear-gradient(to bottom, #57ddff, #c058f3);
+  position: relative;
+}
+
+.check.completed::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: url(images/icon-check.svg) center center no-repeat;
+}
+
+p.todo.complete {
+  text-decoration: line-through;
+  color: #777a92;
+}
+
+/* DELETE TODO */
+.close {
+  display: block;
+  width: 20px;
+  height: 20px;
+  background: url(images/icon-cross.svg) center center no-repeat;
+  position: absolute;
+  right: 1.5rem;
+  display: none;
+  cursor: pointer;
+}
+
+/* SORT TODOS */
+.options {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+  width: 100%;
+  height: 50px;
+  font-family: Regular;
+  font-size: 15px;
+  color: #777a92;
+}
+
+.options #count {
+  margin-left: 1.5rem;
+}
+
+.options #clear {
+  margin-right: 1.5rem;
+  cursor: pointer;
+}
+
+.options #clear:hover {
+  color: #cacde8;
+}
+
+.options #all, .options #active, .options #completed {
+  cursor: pointer;
+}
+
+.options #all:hover, .options #active:hover, .options #completed:hover {
+  color: #cacde8;
+}
+
+.options .active {
+  color: #3a7bfd;
+}
+
+p.drag-drop, p.name {
+  font-family: Regular;
+  font-size: 12px;
+  color: #4d5066;
+  text-align: center;
+  margin-top: 1rem;
+}
+
+p.drag-drop {
+  font-size: 13px;
+  margin-top: 2rem;
+}
+
+/* MEDIA QUERIES */
+@media only screen and (max-width: 1178px) {
+  .container, .title {
+    width: 40%;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .container, .title {
+    width: 43%;
+  }
+}
+
+@media only screen and (max-width: 960px) {
+  .container, .title {
+    width: 46%;
+  }
+}
+
+@media only screen and (max-width: 870px) {
+  .container, .title {
+    width: 50%;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .container, .title {
+    width: 53%;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .container, .title {
+    width: 55%;
+  }
+  div.options .sort {
+    width: 100%;
+    height: 50px;
+    position: absolute;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    top: 70px;
+    background-color: #25273c;
+    border-radius: 5px;
+    -webkit-box-shadow: 0 15px 15px 2px #12141c;
+            box-shadow: 0 15px 15px 2px #12141c;
+  }
+  div.options .sort #all, div.options .sort #active, div.options .sort #completed {
+    margin-right: 1rem;
+  }
+  div.options .sort.light {
+    background-color: #fafafa;
+    -webkit-box-shadow: -5px 15px 15px 0px #e0e2f1;
+            box-shadow: -5px 15px 15px 0px #e0e2f1;
+  }
+  p.drag-drop {
+    margin-top: 6rem;
+  }
+}
+
+@media only screen and (max-width: 670px) {
+  .container, .title {
+    width: 60%;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .container, .title {
+    width: 68%;
+  }
+}
+
+@media only screen and (max-width: 550px) {
+  .container, .title {
+    width: 70%;
+  }
+  .title h1 {
+    font-size: 30px;
+  }
+  .list li .todo {
+    font-size: 12px;
+  }
+  .options {
+    font-size: 14px;
+  }
+  .container #addnew {
+    font-size: 12px;
+  }
+  .container ::-webkit-input-placeholder {
+    font-size: 15px;
+  }
+  .container :-ms-input-placeholder {
+    font-size: 15px;
+  }
+  .container ::-ms-input-placeholder {
+    font-size: 15px;
+  }
+  .container ::placeholder {
+    font-size: 15px;
+  }
+}
+
+@media only screen and (max-width: 460px) {
+  .container, .title {
+    width: 75%;
+  }
+  .list li span.close {
+    display: block;
+    width: 15px;
+    height: 15px;
+    right: 1rem;
+  }
+}
+
+@media only screen and (max-width: 440px) {
+  .container, .title {
+    width: 83%;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .container, .title {
+    width: 90%;
+  }
+}
+/*# sourceMappingURL=main.css.map */
