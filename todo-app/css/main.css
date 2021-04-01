@@ -123,14 +123,6 @@ body.light .options {
   color: #9394a5;
 }
 
-body.light #clear:hover {
-  color: #4d5066;
-}
-
-body.light #all:hover, body.light #active:hover, body.light #completed:hover {
-  color: #4d5066;
-}
-
 body.light .list-container {
   -webkit-box-shadow: -5px 25px 25px -6px #e0e2f1;
           box-shadow: -5px 25px 25px -6px #e0e2f1;
@@ -315,26 +307,6 @@ div.top-img.light {
   position: relative;
 }
 
-.check:hover {
-  cursor: pointer;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#57ddff), to(#c058f3));
-  background-image: linear-gradient(to bottom, #57ddff, #c058f3);
-  background-clip: padding-box;
-  border: none;
-}
-
-.check:hover::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  border-radius: 50%;
-  background-clip: content-box;
-  border: 1px solid transparent;
-}
-
 .check.completed {
   background-image: -webkit-gradient(linear, left top, left bottom, from(#57ddff), to(#c058f3));
   background-image: linear-gradient(to bottom, #57ddff, #c058f3);
@@ -396,16 +368,8 @@ p.todo.complete {
   cursor: pointer;
 }
 
-.options #clear:hover {
-  color: #cacde8;
-}
-
 .options #all, .options #active, .options #completed {
   cursor: pointer;
-}
-
-.options #all:hover, .options #active:hover, .options #completed:hover {
-  color: #cacde8;
 }
 
 .options .active {
@@ -426,6 +390,39 @@ p.drag-drop {
 }
 
 /* MEDIA QUERIES */
+@media (hover: hover) {
+  body.light #clear:hover {
+    color: #4d5066;
+  }
+  body.light #all:hover, body.light #active:hover, body.light #completed:hover {
+    color: #4d5066;
+  }
+  .container .check:hover {
+    cursor: pointer;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#57ddff), to(#c058f3));
+    background-image: linear-gradient(to bottom, #57ddff, #c058f3);
+    background-clip: padding-box;
+    border: none;
+  }
+  .container .check:hover::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border-radius: 50%;
+    background-clip: content-box;
+    border: 1px solid transparent;
+  }
+  .options #clear:hover {
+    color: #cacde8;
+  }
+  .options #all:hover, .options #active:hover, .options #completed:hover {
+    color: #cacde8;
+  }
+}
+
 @media only screen and (max-width: 1178px) {
   .container, .title {
     width: 40%;
@@ -549,6 +546,24 @@ p.drag-drop {
 @media only screen and (max-width: 440px) {
   .container, .title {
     width: 83%;
+  }
+  .wrapper div.top-img {
+    height: 220px;
+    background: url(images/bg-mobile-dark.jpg) center center no-repeat;
+    background-size: cover;
+  }
+  .wrapper div.top-img.light {
+    background: url(images/bg-mobile-light.jpg) center center no-repeat;
+    background-size: cover;
+  }
+  .wrapper .title {
+    margin-top: -150px;
+  }
+  .wrapper .container {
+    margin-top: 0;
+  }
+  .wrapper .container .newToDo {
+    margin-top: 1.3rem;
   }
 }
 

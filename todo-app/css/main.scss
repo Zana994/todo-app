@@ -45,8 +45,6 @@ body.light {
     .options { 
         color: $dark_grayish_blue;
     }
-    #clear:hover { color: $very_dark_gray1;}
-    #all:hover, #active:hover, #completed:hover { color: $very_dark_gray1;}
     .list-container { box-shadow: -5px 25px 25px -6px hsl(233, 37%, 91%);}
 }
 .wrapper {
@@ -156,23 +154,6 @@ div.top-img.light { @include bgd-style(url(images/bg-desktop-light.jpg));}
     border: 1px solid $very_dark_gray1;
     margin: 0 1.5rem;
     position: relative;
-    &:hover { 
-        cursor: pointer;
-        background-image: linear-gradient(to bottom, hsl(192, 100%, 67%), hsl(280, 87%, 65%));
-        background-clip: padding-box;
-        border: none;
-        &::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            border-radius: 50%;
-            background-clip: content-box;
-            border: 1px solid transparent;
-        }
-    }
 }
 .check.completed {
     background-image: linear-gradient(to bottom, hsl(192, 100%, 67%), hsl(280, 87%, 65%));
@@ -218,11 +199,9 @@ p.todo.complete {
     #clear { 
         margin-right: 1.5rem;
         cursor: pointer;
-        &:hover { color: $light_gray;}
     }
     #all, #active, #completed { 
         cursor: pointer;
-        &:hover { color: $light_gray;}
     }
     .active { color: $bright_blue;}
 }
@@ -241,6 +220,43 @@ p.drag-drop {
 
 
 /* MEDIA QUERIES */
+
+@media (hover: hover) {
+    body.light {
+        #clear:hover { color: $very_dark_gray1;}
+        #all:hover, #active:hover, #completed:hover { color: $very_dark_gray1;}
+    }
+    
+    .container {
+        .check {
+            &:hover { 
+                cursor: pointer;
+                background-image: linear-gradient(to bottom, hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+                background-clip: padding-box;
+                border: none;
+                &::before {
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    bottom: 0;
+                    left: 0;
+                    right: 0;
+                    border-radius: 50%;
+                    background-clip: content-box;
+                    border: 1px solid transparent;
+                }
+            }
+        }
+    }
+    .options {
+        #clear {
+            &:hover { color: $light_gray;}
+        }
+        #all, #active, #completed {
+            &:hover { color: $light_gray;}
+        }
+    }
+}
 
 @media only screen and (max-width: 1178px) {
     .container, .title { width: 40%;}
@@ -316,8 +332,25 @@ p.drag-drop {
         }
     }
 }
+
 @media only screen and (max-width: 440px) {
     .container, .title { width: 83%;}
+    .wrapper { 
+    div.top-img { 
+        height: 220px;
+        background: url(images/bg-mobile-dark.jpg) center center no-repeat;
+        background-size: cover;
+    }
+    div.top-img.light { 
+        background: url(images/bg-mobile-light.jpg) center center no-repeat;
+        background-size: cover;
+    }
+    .title { margin-top: -150px;}
+    .container { 
+        margin-top: 0;
+        .newToDo { margin-top: 1.3rem;}
+    }
+   }
 }
 @media only screen and (max-width: 400px) {
     .container, .title { width: 90%;}
