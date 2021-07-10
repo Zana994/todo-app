@@ -222,8 +222,6 @@ var btn = document.querySelector(".mode-icon");
 var topImg = document.querySelector(".top-img");
 var sort = document.querySelector(".sort");
 
-topImg.classList.add("light");
-topImg.classList.remove("light");
 btn.addEventListener('click', changeMode);
 
 function changeMode() {
