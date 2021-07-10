@@ -223,7 +223,8 @@ var topImg = document.querySelector(".top-img");
 var sort = document.querySelector(".sort");
 
 btn.addEventListener('click', changeMode);
-
+topImg.classList.add("light");
+topImg.classList.remove("light");
 function changeMode() {
     if(document.body.classList.contains("light")) {
         document.body.classList.remove("light");
